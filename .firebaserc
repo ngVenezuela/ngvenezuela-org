@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "ngvenezuela-prod": "ng-venezuela-org",
+    "ngvenezuela-dev": "ng-venezuela-org-dev"
+  }
+}
