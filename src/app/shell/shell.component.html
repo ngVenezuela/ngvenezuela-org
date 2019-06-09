@@ -11,17 +11,7 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>ngvenezuela-org</span>
-    </mat-toolbar>
+    <app-header [isHandset]="isHandset$ | async" (toggleSidenav)="drawer.toggle()"></app-header>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>

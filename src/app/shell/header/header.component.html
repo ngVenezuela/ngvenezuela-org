@@ -1,0 +1,19 @@
+<mat-toolbar ngClass.gt-xs="pa-3" class="py-3" color="primary" fxLayout>
+  <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="toggleSidenav.emit()"
+    *ngIf="isHandset">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button>
+  <img class="mx-xs" src="assets/images/logo.png" width="62" height="62">
+  <span>ngVenezuela</span>
+  <div class="menu-options" fxFlex fxHide.xs fxLayout fxLayoutAlign="end">
+    <a href="#" class="mat-body-2 px-xs text-uppercase">Link 1</a>
+    <a href="#" class="mat-body-2 px-xs text-uppercase">Link 2</a>
+    <a href="#" class="mat-body-2 px-xs text-uppercase">Link 3</a>
+    <a href="#" class="mat-body-2 px-xs text-uppercase">Link 4</a>
+    <a href="#" class="mat-body-2 px-xs text-uppercase">Link 5</a>
+  </div>
+</mat-toolbar>
