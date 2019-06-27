@@ -8,3 +8,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 // Core Styles
 @import 'scss/utilities/utilities';
+
+// palette colors theme
+@import 'scss/utilities/palette';
+
+// custom theme angular
+@import '~@angular/material/theming';
+@include mat-core();
+
+$ngvenezuela-primary: mat-palette($mat-ngblue);
+$ngvenezuela-accent:  mat-palette($mat-ngred, 500, 900, A100);
+$ngvenezuela-warn:    mat-palette($mat-ngyellow);
+
+$ngvenezuela-theme: mat-light-theme($ngvenezuela-primary, $ngvenezuela-accent, $ngvenezuela-warn);
+
+@include angular-material-theme($ngvenezuela-theme);
