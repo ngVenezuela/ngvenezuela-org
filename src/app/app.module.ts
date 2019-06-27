@@ -11,12 +11,21 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { HeaderComponent } from './shell/header/header.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeComponent } from './home/home.component';
+import { SomosComponent } from './somos/somos.component';
+
+import { ProyectosComponent } from './proyectos/proyectos.component';
+import { ContactoComponent } from './contacto/contacto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShellComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    SomosComponent,
+    ProyectosComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
