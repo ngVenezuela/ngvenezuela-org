@@ -1,0 +1,76 @@
+<div class="block">
+
+  <div fxShow fxHide.lt-sm>
+    <a routerLink="/"><i class="material-icons" matPrefix>keyboard_backspace</i></a>
+  </div>
+
+  <div class="container">
+
+    <div fxHide fxShow.lt-sm="true">
+      <a routerLink="/"><i class="material-icons" matPrefix>keyboard_backspace</i></a>
+    </div>
+
+    <div class="title">
+      <h1>{{ 'site.wellcome' | translate }}</h1>
+    </div>
+
+    <div class="form-container">
+      <form [formGroup]="formInstance" (ngSubmit)="onSubmit()"  novalidate>
+
+        <div class="input-container">
+          <mat-form-field>
+            <mat-label>{{ 'formControls.email.label' | translate }}</mat-label>
+            <input matInput [placeholder]="'formControls.email.placeholder' | translate" formControlName="email">
+            <mat-icon matSuffix>mail_outline</mat-icon>
+            <mat-error *ngIf="formInstance.get('email').invalid">
+                {{ 'formControls.email.errors.' + errorKeys(formInstance.get('email').errors) | translate }}
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="input-container">
+          <mat-form-field>
+            <mat-label>{{ 'formControls.password.label' | translate }}</mat-label>
+            <input matInput [placeholder]="'formControls.password.placeholder' | translate" class="form-control" formControlName="password" [type]="hide ? 'password' : 'text'">
+            <mat-icon class="password-lock" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="formInstance.get('password').invalid">
+              {{ 'formControls.password.errors.' + errorKeys(formInstance.get('password').errors) | translate }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+
+        <div class="input-container">
+          <mat-checkbox  formControlName="rememberMe">{{ 'formControls.rememberMe' | translate }}</mat-checkbox>
+        </div>
+
+        <div class="action">
+          <button mat-raised-button color="primary" type="submit" class="submit-form" [disabled]="formInstance.status === 'INVALID'" >{{ 'site.next' | translate }}</button>
+        </div>
+
+        <div class="action">
+          <a mat-stroked-button [routerLink]="['/auth/password-recovery']" [queryParams]="{email: formInstance.get('email').value}" >{{ 'site.forgotYourPassword' | translate }}</a>
+        </div>
+
+        <div class="action">
+          <a mat-stroked-button [routerLink]="['/auth/sign-up']">{{ 'site.createAccount' | translate }}</a>
+        </div>
+
+        <div class="social-login">
+          <div class="title">{{ 'site.otherSocialMedia' | translate }}</div>
+          <div class="app-social-container">
+            <app-social redirectTo="/dashboard" provider="google"></app-social>
+            <app-social redirectTo="/dashboard" provider="facebook"></app-social>
+            <app-social redirectTo="/dashboard" provider="twitter"></app-social>
+            <app-social redirectTo="/dashboard" provider="github"></app-social>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</div>
+
+

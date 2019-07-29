@@ -23,3 +23,48 @@ $ngvenezuela-warn:    mat-palette($mat-ngyellow);
 $ngvenezuela-theme: mat-light-theme($ngvenezuela-primary, $ngvenezuela-accent, $ngvenezuela-warn);
 
 @include angular-material-theme($ngvenezuela-theme);
+
+
+.block {
+  margin: 20px;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.form-container {
+
+  .input-container {
+    margin-bottom: 20px;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+  .password-lock {
+    cursor: pointer;
+  }
+
+  .action {
+    margin-bottom: 20px;
+    a, button {
+      width: 100%;
+    }
+  }
+
+  .social-login {
+    margin-bottom: 20px;
+    .title {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .app-social-container {
+      text-align: center;
+    }
+  }
+
+}
+

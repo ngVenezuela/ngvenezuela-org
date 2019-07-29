@@ -1,0 +1,44 @@
+{
+  "site":{
+     "wellcome":"Bienvenido",
+     "next":"Siguiente",
+     "createAccount":"Crear una cuenta",
+     "forgotYourPassword": "¿Olvido su contraseña?",
+     "otherSocialMedia":"O inicia sesión con una red social",
+     "signUpWithSocialNetwork":"O regístrate con una red social",
+     "newRegistration":"Nuevo registro",
+     "sendEmail":"Enviar correo electrónico",
+     "recoverYourAccount":"Recupere su cuenta"
+  },
+  "formControls":{
+     "rememberMe":"Recordarme",
+     "name":{
+        "label":"Nombre",
+        "placeholder":"Introduzca su nombre",
+        "errors":{
+           "required":"Es requerido."
+        }
+     },
+     "email":{
+        "label":"Correo Electrónico",
+        "placeholder":"Introduzca su correo electrónico",
+        "errors":{
+           "required":"Es requerido.",
+           "email":"El correo electrónico no es válido.",
+           "isGmailAccountCorrect":"El correo electrónico GMAIL está mal escrito."
+        }
+     },
+     "password":{
+        "label":"Contraseña",
+        "placeholder":"Introduzca su contraseña",
+        "errors":{
+           "required":"Es requerido.",
+           "minlength":"Almenos 8 caracteres.",
+           "oneUpperCaseLetter":"Al menos una letra mayúscula (A-Z)",
+           "oneLowerCaseLetter":"Al menos una letra minúscula (a-z)",
+           "oneDigit":"Al menos un dígito (0-9)",
+           "oneSpecialCharacter":"Al menos un carácter especial (#?!@$%^&*-)"
+        }
+     }
+  }
+}

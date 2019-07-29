@@ -1,0 +1,44 @@
+{
+  "site":{
+     "wellcome":"Wellcome",
+     "next":"Next",
+     "createAccount": "Create an account",
+     "forgotYourPassword":"Forgot your password?",
+     "otherSocialMedia":"Or login with social network account",
+     "signUpWithSocialNetwork":"Or Sign Up with social network account",
+     "newRegistration":"New registration",
+     "sendEmail":"Send email",
+     "recoverYourAccount":"Recover your account"
+    },
+  "formControls":{
+     "rememberMe":"Remember me",
+     "name":{
+        "label":"Name",
+        "placeholder":"Enter your name",
+        "errors":{
+           "required":"It is required."
+        }
+     },
+     "email":{
+        "label":"Email",
+        "placeholder":"Enter your email",
+        "errors":{
+           "required":"It is required.",
+           "email":"The email is not valid",
+           "isGmailAccountCorrect":"The GMAIL email is poorly written."
+        }
+     },
+     "password":{
+        "label":"Password",
+        "placeholder":"Enter your password",
+        "errors":{
+           "required":"It is required.",
+           "minlength":"At least 8 characters.",
+           "oneUpperCaseLetter":"At least one capital letter (A-Z)",
+           "oneLowerCaseLetter":"At least one lower case letter (a-z)",
+           "oneDigit":"At least one digit (0-9)",
+           "oneSpecialCharacter":"At least one special character (#?! @ $% ^ & * -)"
+        }
+     }
+  }
+}

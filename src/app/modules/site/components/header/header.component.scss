@@ -1,0 +1,17 @@
+a.logo {
+  text-decoration: none;
+  color: white;
+  padding: 0;
+  img {
+    vertical-align: middle;
+  }
+}
+
+:host .menu-options a {
+  text-decoration: none;
+  color: inherit;
+  img {
+    padding-left: 10px;
+    vertical-align: middle;
+  }
+}

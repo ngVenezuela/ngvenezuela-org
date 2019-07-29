@@ -1,1 +1,43 @@
-<app-shell></app-shell>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size = "large" color = "#fff" type = "timer"></ngx-spinner>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+
+    <mat-toolbar>Menu</mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="'/home'">Home</a>
+      <a mat-list-item [routerLink]="'/somos'">Quienes Somos</a>
+      <a mat-list-item [routerLink]="'/proyectos'">Proyectos</a>
+      <a mat-list-item [routerLink]="'/dashboard'">Dashboard *</a>
+      <a *ngIf="user === null"  mat-list-item [routerLink]="'/auth'">Login</a>
+      <a *ngIf="user !== null"  mat-list-item appLogout [redirectTo]="'/'" >Logout</a>
+    </mat-nav-list>
+
+    <mat-toolbar>
+        <button mat-stroked-button [matMenuTriggerFor]="i18nSelection">
+          <img *ngIf="CURRENT_LENGUAGE === 'es_VE'" alt="Español" src="/assets/images/venezuela.png">
+          <img *ngIf="CURRENT_LENGUAGE === 'en_US'" alt="English" src="/assets/images/united-states.png">
+          {{CURRENT_LENGUAGE === 'es_VE' ? ' Español' :  ' English' }}
+        </button>
+        <mat-menu #i18nSelection="matMenu">
+          <button mat-menu-item (click)="switchLanguage('es_VE');" > <img alt="Español" src="/assets/images/venezuela.png"> Español</button>
+          <button mat-menu-item (click)="switchLanguage('en_US');" > <img alt="English" src="/assets/images/united-states.png"> English</button>
+        </mat-menu>
+    </mat-toolbar>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header [isHandset]="isHandset$ | async" (toggleSidenav)="drawer.toggle()"></app-header>
+    <!-- Add Content Here -->
+    <div class="flexbox-parent">
+       <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

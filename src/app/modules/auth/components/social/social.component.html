@@ -1,0 +1,14 @@
+
+<button type="button" fxHide fxShow.xs="true" mat-button (click)="signIn('redirect')" [ngSwitch]="provider">
+  <img alt="Sign up with facebook" *ngSwitchCase="'facebook'" src="./assets/images/facebook.png">
+  <img alt="Sign up with google" *ngSwitchCase="'google'" src="./assets/images/google.png">
+  <img alt="Sign up with twitter" *ngSwitchCase="'twitter'" src="./assets/images/twitter.png">
+  <img alt="Sign up with github" *ngSwitchCase="'github'" src="./assets/images/github.png">
+</button>
+
+<button type="button" fxHide fxShow.gt-xs="true" mat-button (click)="signIn('popup')" [ngSwitch]="provider">
+  <img alt="Sign up with facebook" *ngSwitchCase="'facebook'" src="./assets/images/facebook.png">
+  <img alt="Sign up with google" *ngSwitchCase="'google'" src="./assets/images/google.png">
+  <img alt="Sign up with twitter" *ngSwitchCase="'twitter'" src="./assets/images/twitter.png">
+  <img alt="Sign up with github" *ngSwitchCase="'github'" src="./assets/images/github.png">
+</button>
